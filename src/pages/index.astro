@@ -1,0 +1,13 @@
+---
+import '../components/my-element.js';
+const name = 'John';
+
+---
+<html>
+	<body>
+		<my-element
+			name={name}
+			client:idle
+		></my-element>
+	</body>
+</html>

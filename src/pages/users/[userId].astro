@@ -1,0 +1,15 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../components/my-element.js';
+const userId =  Astro.params.userId;
+const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+const user = await res.json();
+
+---
+<MainLayout>
+	<h1>User Detail Page</h1>
+	<my-element
+		client:load
+		name={user.name}
+	></my-element>
+</MainLayout>
